@@ -1,5 +1,6 @@
-#### SASView Form Factor models for octahedron shape
-* explanations and usage exemple in: Octa_general_Lebedev.ipynb
-* octa-general.py is a pure python model where the orientation average is done using Lebedev quadrature
+#### SASView Form Factor models for octahedron shape including truncation
+* Octa_general_Lebedev.ipynb contains usage exemple of the model 
+* octa-general.py is a pure python model where orientation average is computed using Lebedev quadrature
 * Lebedev quadrature is implemented using the open source library:
   https://pypi.org/project/pylebedev/
+* folder ./models_with_c_code/ contains other SASView models with ancillary c code where orientation average is computed using Gauss-Legendre quadrature. 
