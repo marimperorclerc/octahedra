@@ -354,7 +354,7 @@ def plot_fibonacci_sphere(npoints_fibonacci=500, figsize=(7,7)):
 
 
 
-def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99,  npoints_fibonacci:int=400, rotate:bool=True):
+def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99,  npoints_fibonacci:int=400, rotate:bool=False):
     """
     Parameters:
         q:      input scattering vectors, units 1/Ang
@@ -401,7 +401,7 @@ def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99,  npoi
     print(f'Execution time Fibonacci with {npoints_fibonacci} points: {time_fib:.4f} seconds')
 
 
-    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)
+    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)**2
 
 
 Iq.vectorized = True # Here Iq works only for a single float value of q parameter

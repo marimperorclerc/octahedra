@@ -317,7 +317,7 @@ def plot_gauss_sphere(npoints_gauss, figsize=(7,7)):
 
 
 
-def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99, npoints_gauss:int=1000, rotate:bool=True):
+def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99, npoints_gauss:int=1000, rotate:bool=False):
     """
     Parameters:
         q:      input scattering vectors, units 1/Ang
@@ -352,7 +352,7 @@ def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99, npoin
     print(f'Execution time Gauss with {int(npoints_gauss)**2} points: {time_gauss:.4f} seconds')
 
 
-    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)
+    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)**2
 
 
 Iq.vectorized = True # Here Iq works only for a single float value of q parameter

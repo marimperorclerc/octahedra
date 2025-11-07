@@ -325,7 +325,7 @@ def Iq(q, sld, sld_solvent,length_a=500, b2a_ratio=1, c2a_ratio=1, t=0.99,  nord
     print(f'Execution time Lebedev with {len(q_unit)} points: {time_lebedev:.4f} seconds')
 
 
-    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)
+    return integral*0.0001*(sld-sld_solvent)**2*volume(length_a, b2a_ratio, c2a_ratio, t)**2
 
 
 Iq.vectorized = True # Here Iq works only for a single float value of q parameter
